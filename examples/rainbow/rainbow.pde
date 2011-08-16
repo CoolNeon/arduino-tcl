@@ -14,24 +14,24 @@
 #include <SPI.h>
 #include <TCL.h>
 
-const int LEDS 25; // There are 25 LEDs in the Total Control Lighting Strand
+const int LEDS = 25; // There are 25 LEDs in the Total Control Lighting Strand
 const byte red[] = {0xff, 0xff, 0xff, 0x00, 0x00};
 const byte green[] = {0x00, 0x60, 0xb0, 0x80, 0x00};
 const byte blue[] = {0x00, 0x00, 0x00, 0x00, 0xff};
 
 void setup() {
-  SPI.begin();
+  TCL.begin();
 
 }
 
 void loop() {
   int i;
 
-  SPI.sendEmptyFrame();
+  TCL.sendEmptyFrame();
   for(i=0;i<LEDS;i++) {
-    SPI.sendColor(red[i%5],green[i%5],blue[i%5]);
+    TCL.sendColor(red[i%5],green[i%5],blue[i%5]);
   }
-  SPI.sendEmptyFrame();
+  TCL.sendEmptyFrame();
 
   delay(1000);
 }
