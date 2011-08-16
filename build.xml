@@ -1,0 +1,22 @@
+<project name="arduino-tcl" default="zip" basedir=".">
+
+  <target name="init">
+    <property name="version" value="1.0"/>
+    <property name="zipname" value="arduino-TCL-${version}.zip"/>
+  </target>
+
+  <target name="zip" depends="init">
+    <zip destfile="${zipname}">
+      <zipfileset dir="." prefix="TCL">
+        <include name="*.h"/>
+        <include name="*.cpp"/>
+        <include name="*.txt"/>
+      </zipfileset>
+      <zipfileset dir="examples" prefix="TCL/examples"/>
+    </zip>
+  </target>
+
+  <target name="clean" depends="init">
+    <delete file="${zipname}"/>
+  </target>
+</project>
