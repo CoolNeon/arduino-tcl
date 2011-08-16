@@ -5,6 +5,12 @@ This library allows you to control Cool Neon's Total Control Lighting using an
 Arduino. The library is built on SPI and requires that the Arduino SPI library
 also be included.
 
+Installation
+------------
+To install this library, unzip it into the "libraries" directory of your
+Arduino sketchbook folder. If there is not already a folder named "libraries"
+then create it. 
+
 Hardware
 --------
 The Total Control Lighting strands use 4 wires to provide both power and
