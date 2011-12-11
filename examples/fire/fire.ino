@@ -1,5 +1,5 @@
 /*****************************************************************************
- * fire.pde
+ * fire.ino
  *
  * This example will send a flickering fire sequence down a 25 pixel long
  * strand of total control lighting. It uses random numbers to shift in

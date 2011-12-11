@@ -1,5 +1,5 @@
 /*****************************************************************************
- * rainbow.pde
+ * rainbow.ino
  *
  * This example will send a sequence of rainbow colors down a 25 pixel long
  * strand of total control lighting. The Arduino will send an update every

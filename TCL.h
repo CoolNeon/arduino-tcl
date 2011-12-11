@@ -7,8 +7,12 @@
  ****************************************************************************/
 #ifndef TCL_h
 #define TCL_h
-#include <Wprogram.h>
-#include <SPI.h>
+#if defined(ARDUINO) && ARDUINO >= 100
+#include "Arduino.h"
+#else
+#include "WProgram.h"
+#endif
+#include "SPI.h"
 
 class TclClass {
   public:

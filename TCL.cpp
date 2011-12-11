@@ -6,8 +6,6 @@
  * is included in the file LICENSE.txt
  ****************************************************************************/
 
-#include "Wprogram.h"
-#include "SPI.h"
 #include "TCL.h"
 
 TclClass TCL;
