@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Tcl.cpp
  *
- * Copyright 2011 Christpher De Vries
+ * Copyright 2011-2012 Christpher De Vries
  * This program is distributed under the Artistic License 2.0, a copy of which
  * is included in the file LICENSE.txt
  ****************************************************************************/
@@ -16,6 +16,18 @@ void TclClass::begin() {
   SPI.setBitOrder(MSBFIRST);
   SPI.setDataMode(SPI_MODE0);
   SPI.setClockDivider(SPI_CLOCK_DIV2);
+}
+
+void TclClass::setupDeveloperShield() {
+  pinMode(TCL_MOMENTARY1, INPUT);
+  pinMode(TCL_MOMENTARY2, INPUT);
+  pinMode(TCL_SWITCH1, INPUT);
+  pinMode(TCL_SWITCH2, INPUT);
+
+  digitalWrite(TCL_MOMENTARY1, HIGH);
+  digitalWrite(TCL_MOMENTARY2, HIGH);
+  digitalWrite(TCL_SWITCH1, HIGH);
+  digitalWrite(TCL_SWITCH2, HIGH);
 }
 
 void TclClass::end() {
@@ -39,7 +51,9 @@ void TclClass::sendFrame(byte flag, byte red, byte green, byte blue) {
 }
 
 void TclClass::sendColor(byte red, byte green, byte blue) {
-  byte flag = makeFlag(red,green,blue);
+  byte flag;
+
+  flag = makeFlag(red,green,blue);
 
   sendFrame(flag,red,green,blue);
 }

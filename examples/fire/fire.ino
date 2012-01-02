@@ -12,7 +12,7 @@
 #include <SPI.h>
 #include <TCL.h>
 
-const int LEDS = 25; // There are 25 LEDs in the Total Control Lighting Strand
+const int LEDS = 100; // There are 100 LEDs in the Total Control Lighting Strand
 byte color1[] = {0xff, 0x00, 0x00};
 byte color2[] = {0xff, 0x90, 0x00};
 
