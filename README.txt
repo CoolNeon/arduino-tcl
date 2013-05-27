@@ -11,6 +11,12 @@ To install this library, unzip it into the "libraries" directory of your
 Arduino sketchbook folder. If there is not already a folder named "libraries"
 then create it. 
 
+You will need to modify TCL.h to choose between bit-bang mode on 2 digital
+IO pins or if you want SPI mode by uncommenting ONE AND ONLY ONE of the
+#define statements for TCL_DIO or TCL_SPI. If you select TCL_DIO, you should
+also modify the #defines for TCL_CLOCKPIN and TCL_DATAPIN to select the pins
+that you will use for Clock and Data, respectively.
+
 Hardware
 --------
 The Total Control Lighting strands use 4 wires to provide both power and
@@ -20,6 +26,14 @@ designated with the following colors.
 Red:    +5V
 Yellow: Clock
 Green:  Data
+Blue:   Ground
+
+If you're cutting and connecting individual LEDs, the color coding is
+somewhat different, with the following mappings:
+
+Red:    +5V
+Green:  Clock
+White:  Data
 Blue:   Ground
 
 If you are using a small number of LEDs the Arduino itself can provide power
