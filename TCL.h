@@ -6,9 +6,8 @@
  * is included in the file LICENSE.txt
  ****************************************************************************/
 // Choose between bit bang (any 2 dio pins) and SPI modes
-
-#define TCL_DIO
-//#define TCL_SPI
+//#define TCL_DIO
+#define TCL_SPI
 
 #ifndef TCL_h
 #define TCL_h
