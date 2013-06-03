@@ -115,12 +115,26 @@ TCL_MOMENTARY2 : Button 2
 TCL_SWITCH1    : Two-position Switch 1
 TCL_SWITCH2    : Two-position Switch 2
 
+If you are using the metallic purple developer shield/arduino case, then the
+aliases correspond to the following silkscreened outputs:
+
+TCL_POT1       : Pin 1
+TCL_POT2       : Pin 0
+TCL_POT3       : Pin 2
+TCL_POT4       : Pin 3
+TCL_MOMENTARY1 : Pin 5
+TCL_MOMENTARY2 : Pin 4
+TCL_SWITCH1    : Pin 6
+TCL_SWITCH2    : Pin 7
+
 So, for example to read the state of button 1 I would issue the command:
 
 state = digitalRead(TCL_MOMENTARY1);
 
 It would return state==HIGH if the button was open (not being pressed) and
-state==LOW if the button was closed (being pressed). 
+state==LOW if the button was closed (being pressed). The digital buttons and
+switches are pulled-up to the HIGH state when the switches are open and are
+LOW when closed.
 
 Example Code
 ------------
