@@ -106,14 +106,14 @@ TCL.setupDeveloperShield();
 
 There are also defined aliases for each input device:
 
-TCL_POT1       : Potentiometer 1
-TCL_POT2       : Potentiometer 2
-TCL_POT3       : Potentiometer 3
-TCL_POT4       : Potentiometer 4
-TCL_MOMENTARY1 : Button 1
-TCL_MOMENTARY2 : Button 2
-TCL_SWITCH1    : Two-position Switch 1
-TCL_SWITCH2    : Two-position Switch 2
+TCL_POT1       : Potentiometer 1 (A0)
+TCL_POT2       : Potentiometer 2 (A1)
+TCL_POT3       : Potentiometer 3 (A2)
+TCL_POT4       : Potentiometer 4 (A3)
+TCL_MOMENTARY1 : Button 1 (D4)
+TCL_MOMENTARY2 : Button 2 (D5)
+TCL_SWITCH1    : Two-position Switch 1 (D6)
+TCL_SWITCH2    : Two-position Switch 2 (D7)
 
 If you are using the metallic purple developer shield/arduino case, then the
 aliases correspond to the following silkscreened outputs:
