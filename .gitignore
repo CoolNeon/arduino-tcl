@@ -1,0 +1,13 @@
+*~
+.*.swp
+*.py[co]
+*.egg
+*.egg-info
+*.old
+MANIFEST
+dist/
+build/
+venv/
+.DS_Store
+.cache
+arduino-TCL-*.zip

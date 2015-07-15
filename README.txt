@@ -28,14 +28,6 @@ Yellow: Clock
 Green:  Data
 Blue:   Ground
 
-If you're cutting and connecting individual LEDs, the color coding is
-somewhat different, with the following mappings:
-
-Red:    +5V
-Green:  Clock
-White:  Data
-Blue:   Ground
-
 If you are using a small number of LEDs the Arduino itself can provide power
 to the strand, but for a significant number of lights (greater than 5) an
 external power source should be attached. The Arduino will control the lights
