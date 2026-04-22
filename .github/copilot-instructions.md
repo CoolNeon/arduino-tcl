@@ -95,6 +95,14 @@ void loop() {
 }
 ```
 
+## Changelog
+
+Whenever changes are made to this repository, update `CHANGELOG.md`:
+
+- Add a new entry at the top of the list under the current version from `library.properties`.
+- Follow the existing format: `**Version X.Y.Z** *(Month Day, Year)* — brief description of the change.`
+- If the version has not yet been bumped for this change, add the entry under the current version and note it is unreleased, or bump the version in `library.properties` first.
+
 ## Releases
 
 Releases are created automatically by the GitHub Actions workflow at `.github/workflows/release.yml` when a PR is merged into `main`. The release tag and title are taken from the `version` field in `library.properties`. Bump `version` in `library.properties` before merging a PR to publish a new release.

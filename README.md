@@ -125,7 +125,7 @@ state = digitalRead(TCL_MOMENTARY1);
 
 ## Example Code
 
-Several examples are available in the Arduino examples menu under **TCL**:
+Several examples are available in the Arduino examples menu under **CoolNeon TCL**:
 
 - **blinky** — Causes the lights to blink at slightly randomized times in random colors.
 - **color_designer** — Uses the developer shield potentiometers to search for colors. Colors cascade down the strand as you turn the first three potentiometers (red, green, blue). Press the first momentary button to output the corresponding `sendColor()` command over the serial port (9600 bps).
@@ -133,9 +133,13 @@ Several examples are available in the Arduino examples menu under **TCL**:
 - **rainbow** — A static red, orange, yellow, green, blue repeating sequence sent to the strand.
 - **serialcontrol** — Allows direct control of TCL pixels from a computer over a serial connection using a simple ASCII-based protocol. Used by the PixelPainter application.
 
-## Revision History
 
-- **Version 1.3.2** — Current release.
-- **Version 1.2** *(January 2, 2012)* — Added support for the Cool Neon developer shield, a color designer example, and a sketch for pixel control over serial.
-- **Version 1.1** *(December 11, 2011)* — Updated to work with the Arduino 1.0 IDE.
-- **Version 1.0** *(August 16, 2011)* — Initial release using the Arduino SPI library to control generation 1 TCL strands on pre-Arduino 1.0 IDE.
+## Contributing
+
+Contributions are welcome via pull requests. Please follow these guidelines before submitting:
+
+1. **Update the version** in `library.properties` following [Semantic Versioning](https://semver.org/) (e.g. `version=1.3.0`).
+2. **Update the revision history** in `CHANGELOG.md` with a brief description of the change.
+3. **Test your changes** on hardware before submitting.
+4. **Monitor PR checks** — ensure all automated checks pass before requesting a review. Address any failures before the PR will be considered.
+5. **Monitor acceptance** - Check the [Arduino version scan logs](https://downloads.arduino.cc/libraries/logs/github.com/CoolNeon/arduino-tcl/) for acceptance.  They are updated hourly, so there may be a slight delay.
