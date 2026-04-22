@@ -1,0 +1,47 @@
+name: Release on PR Merge
+
+on:
+  pull_request:
+    types: [closed]
+    branches: [main]
+
+jobs:
+  release:
+    name: Create release
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Extract version from library.properties
+        id: props
+        run: |
+          VERSION=$(grep -m1 '^version=' library.properties | cut -d= -f2 | tr -d '[:space:]')
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Check if version already released
+        id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION="${{ steps.props.outputs.version }}"
+          if gh release view "${VERSION}" --repo "${{ github.repository }}" > /dev/null 2>&1; then
+            echo "Version ${VERSION} already exists as a release. Skipping."
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Version ${VERSION} is not yet released. OK."
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create release
+        if: steps.check.outputs.exists != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION="${{ steps.props.outputs.version }}"
+          gh release create "${VERSION}" \
+            --title "${VERSION}" \
+            --generate-notes \
+            --repo "${{ github.repository }}"
